@@ -732,8 +732,8 @@ def main():
     motor_enabled = True
     sound_enabled = True
     video_enabled = True
-    video_many = '1.mp4'
-    video_few = 'mei.mp4'
+    video_many = 'code/1.mp4'
+    video_few = 'code/mei.mp4'
     mei_speed = 2.0
 
     # Parse command-line arguments
