@@ -32,7 +32,7 @@ void mHold(int i) { digitalWrite(P1[i], LOW); digitalWrite(P2[i], LOW); }
 void setup() {
   Serial.begin(9600);
   delay(50);
-  Serial.println("=== FW: motor_two v1 | A=2/3 B=4/5 | one-at-a-time ===");
+  Serial.println("=== FW: A=2/3 B=4/5 | one-at-a-time ===");
 
   for (int i = 0; i < 2; i++) { pinMode(P1[i], OUTPUT); pinMode(P2[i], OUTPUT); }
 
@@ -60,7 +60,7 @@ void loop() {
         curMotor = 1 - curMotor;           // Alternate
         mRetract(curMotor);
         phase = RETRACT; phaseStart = now;
-        Serial.print("Action: motor "); Serial.print(curMotor == 0 ? "A" : "B"); Serial.println(" retract");
+        Serial.print("Action "); Serial.print(curMotor == 0 ? "A" : "B"); Serial.println(" retract");
       }
       break;
 
@@ -86,7 +86,7 @@ void loop() {
         curMotor = 1 - curMotor;
         mRetract(curMotor);
         phase = RETRACT; phaseStart = now;
-        Serial.print("Action: motor "); Serial.print(curMotor == 0 ? "A" : "B"); Serial.println(" retract");
+        Serial.print("Action"); Serial.print(curMotor == 0 ? "A" : "B"); Serial.println(" retract");
       }
       break;
   }
